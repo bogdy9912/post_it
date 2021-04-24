@@ -20,5 +20,8 @@ ThemeData buildThemeData(BuildContext context) {
 //      titleTextStyle: const TextStyle(color: Colors.white),
     ),
     scaffoldBackgroundColor: const Color(0xFF383A47),
+    elevatedButtonTheme: ElevatedButtonThemeData(
+      style: ButtonStyle(backgroundColor: MaterialStateProperty.all(const Color(0xFF5969FF))),
+    ),
   );
 }

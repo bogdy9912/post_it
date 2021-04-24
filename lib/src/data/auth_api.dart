@@ -46,6 +46,8 @@ class AuthApi {
       b.token = json.decode(response.body)['data']['token'];
     });
 
+    print(finalUser.token);
+
     return finalUser;
   }
 }

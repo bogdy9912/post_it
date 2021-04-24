@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_redux/flutter_redux.dart';
 import 'package:post_it/src/actions/auth/index.dart';
+import 'package:post_it/src/actions/posts/index.dart';
 import 'package:post_it/src/models/index.dart';
 import 'package:post_it/src/presentation/app_routes.dart';
 
@@ -83,7 +84,7 @@ class _LoginPageState extends State<LoginPage> {
                     textInputAction: TextInputAction.done,
                     validator: (String? value) {
                       if (value == null || value.length < 6) {
-                        return 'Please a longer password';
+                        return 'Please enter a longer password';
                       }
                       return null;
                     },
@@ -97,6 +98,7 @@ class _LoginPageState extends State<LoginPage> {
                         if (valid) {
                           StoreProvider.of<AppState>(context)
                               .dispatch(Login(username: _username.text, password: _password.text));
+
                         }
                       },
                       child: const Text('LOGIN'),
