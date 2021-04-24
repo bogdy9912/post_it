@@ -7,7 +7,6 @@ import 'package:post_it/src/models/posts/index.dart';
 //import 'package:post_it/src/models/posts/index.dart';
 import 'package:post_it/src/models/serializers.dart';
 
-
 export 'auth/index.dart';
 export 'posts/index.dart';
 

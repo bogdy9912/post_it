@@ -519,10 +519,14 @@ abstract class RegisterError implements Register, ErrorAction {
 class _$LoginTearOff {
   const _$LoginTearOff();
 
-  Login$ call({required String username, required String password}) {
+  Login$ call(
+      {required String username,
+      required String password,
+      required void Function(AppAction) response}) {
     return Login$(
       username: username,
       password: password,
+      response: response,
     );
   }
 
@@ -546,14 +550,18 @@ const $Login = _$LoginTearOff();
 mixin _$Login {
   @optionalTypeArgs
   TResult when<TResult extends Object?>(
-    TResult Function(String username, String password) $default, {
+    TResult Function(
+            String username, String password, void Function(AppAction) response)
+        $default, {
     required TResult Function(AppUser user) successful,
     required TResult Function(Object error) error,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>(
-    TResult Function(String username, String password)? $default, {
+    TResult Function(String username, String password,
+            void Function(AppAction) response)?
+        $default, {
     TResult Function(AppUser user)? successful,
     TResult Function(Object error)? error,
     required TResult orElse(),
@@ -595,7 +603,8 @@ class _$LoginCopyWithImpl<$Res> implements $LoginCopyWith<$Res> {
 abstract class $Login$CopyWith<$Res> {
   factory $Login$CopyWith(Login$ value, $Res Function(Login$) then) =
       _$Login$CopyWithImpl<$Res>;
-  $Res call({String username, String password});
+  $Res call(
+      {String username, String password, void Function(AppAction) response});
 }
 
 /// @nodoc
@@ -611,6 +620,7 @@ class _$Login$CopyWithImpl<$Res> extends _$LoginCopyWithImpl<$Res>
   $Res call({
     Object? username = freezed,
     Object? password = freezed,
+    Object? response = freezed,
   }) {
     return _then(Login$(
       username: username == freezed
@@ -621,22 +631,29 @@ class _$Login$CopyWithImpl<$Res> extends _$LoginCopyWithImpl<$Res>
           ? _value.password
           : password // ignore: cast_nullable_to_non_nullable
               as String,
+      response: response == freezed
+          ? _value.response
+          : response // ignore: cast_nullable_to_non_nullable
+              as void Function(AppAction),
     ));
   }
 }
 
 /// @nodoc
 class _$Login$ implements Login$ {
-  const _$Login$({required this.username, required this.password});
+  const _$Login$(
+      {required this.username, required this.password, required this.response});
 
   @override
   final String username;
   @override
   final String password;
+  @override
+  final void Function(AppAction) response;
 
   @override
   String toString() {
-    return 'Login(username: $username, password: $password)';
+    return 'Login(username: $username, password: $password, response: $response)';
   }
 
   @override
@@ -648,14 +665,18 @@ class _$Login$ implements Login$ {
                     .equals(other.username, username)) &&
             (identical(other.password, password) ||
                 const DeepCollectionEquality()
-                    .equals(other.password, password)));
+                    .equals(other.password, password)) &&
+            (identical(other.response, response) ||
+                const DeepCollectionEquality()
+                    .equals(other.response, response)));
   }
 
   @override
   int get hashCode =>
       runtimeType.hashCode ^
       const DeepCollectionEquality().hash(username) ^
-      const DeepCollectionEquality().hash(password);
+      const DeepCollectionEquality().hash(password) ^
+      const DeepCollectionEquality().hash(response);
 
   @JsonKey(ignore: true)
   @override
@@ -665,23 +686,27 @@ class _$Login$ implements Login$ {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>(
-    TResult Function(String username, String password) $default, {
+    TResult Function(
+            String username, String password, void Function(AppAction) response)
+        $default, {
     required TResult Function(AppUser user) successful,
     required TResult Function(Object error) error,
   }) {
-    return $default(username, password);
+    return $default(username, password, response);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>(
-    TResult Function(String username, String password)? $default, {
+    TResult Function(String username, String password,
+            void Function(AppAction) response)?
+        $default, {
     TResult Function(AppUser user)? successful,
     TResult Function(Object error)? error,
     required TResult orElse(),
   }) {
     if ($default != null) {
-      return $default(username, password);
+      return $default(username, password, response);
     }
     return orElse();
   }
@@ -712,11 +737,14 @@ class _$Login$ implements Login$ {
 }
 
 abstract class Login$ implements Login {
-  const factory Login$({required String username, required String password}) =
-      _$Login$;
+  const factory Login$(
+      {required String username,
+      required String password,
+      required void Function(AppAction) response}) = _$Login$;
 
   String get username => throw _privateConstructorUsedError;
   String get password => throw _privateConstructorUsedError;
+  void Function(AppAction) get response => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
   $Login$CopyWith<Login$> get copyWith => throw _privateConstructorUsedError;
 }
@@ -784,7 +812,9 @@ class _$LoginSuccessful implements LoginSuccessful {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>(
-    TResult Function(String username, String password) $default, {
+    TResult Function(
+            String username, String password, void Function(AppAction) response)
+        $default, {
     required TResult Function(AppUser user) successful,
     required TResult Function(Object error) error,
   }) {
@@ -794,7 +824,9 @@ class _$LoginSuccessful implements LoginSuccessful {
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>(
-    TResult Function(String username, String password)? $default, {
+    TResult Function(String username, String password,
+            void Function(AppAction) response)?
+        $default, {
     TResult Function(AppUser user)? successful,
     TResult Function(Object error)? error,
     required TResult orElse(),
@@ -903,7 +935,9 @@ class _$LoginError implements LoginError {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>(
-    TResult Function(String username, String password) $default, {
+    TResult Function(
+            String username, String password, void Function(AppAction) response)
+        $default, {
     required TResult Function(AppUser user) successful,
     required TResult Function(Object error) error,
   }) {
@@ -913,7 +947,9 @@ class _$LoginError implements LoginError {
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>(
-    TResult Function(String username, String password)? $default, {
+    TResult Function(String username, String password,
+            void Function(AppAction) response)?
+        $default, {
     TResult Function(AppUser user)? successful,
     TResult Function(Object error)? error,
     required TResult orElse(),

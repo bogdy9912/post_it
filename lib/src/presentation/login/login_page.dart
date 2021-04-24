@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_redux/flutter_redux.dart';
 import 'package:post_it/src/actions/auth/index.dart';
+import 'package:post_it/src/actions/index.dart';
 import 'package:post_it/src/actions/posts/index.dart';
 import 'package:post_it/src/models/index.dart';
 import 'package:post_it/src/presentation/app_routes.dart';
@@ -16,15 +17,20 @@ class _LoginPageState extends State<LoginPage> {
   final TextEditingController _username = TextEditingController();
   final TextEditingController _password = TextEditingController();
 
+  void _response(AppAction action){
+    if (action is LoginError){
+      print('Eroare');
+    }
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-
       body: Padding(
         padding: const EdgeInsets.all(24.0),
         child: Form(
           child: Builder(
-            builder:(BuildContext context) =>  SingleChildScrollView(
+            builder: (BuildContext context) => SingleChildScrollView(
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: <Widget>[
@@ -77,7 +83,6 @@ class _LoginPageState extends State<LoginPage> {
                       ),
                       fillColor: Theme.of(context).accentColor,
                       filled: true,
-
                     ),
                     obscureText: true,
                     keyboardType: TextInputType.visiblePassword,
@@ -91,14 +96,15 @@ class _LoginPageState extends State<LoginPage> {
                   ),
                   const SizedBox(height: 6),
                   ConstrainedBox(
-                    constraints: const BoxConstraints.tightFor(width: double.infinity, height: 48),
+                    constraints: const BoxConstraints.tightFor(
+                        width: double.infinity, height: 48),
                     child: ElevatedButton(
                       onPressed: () {
                         final bool valid = Form.of(context)!.validate();
                         if (valid) {
-                          StoreProvider.of<AppState>(context)
-                              .dispatch(Login(username: _username.text, password: _password.text));
-
+                          StoreProvider.of<AppState>(context).dispatch(Login(
+                              username: _username.text,
+                              password: _password.text,response: _response));
                         }
                       },
                       child: const Text('LOGIN'),
@@ -114,7 +120,9 @@ class _LoginPageState extends State<LoginPage> {
                         },
                         child: const Text(
                           'New here? Create an account',
-                          style: TextStyle(decoration: TextDecoration.underline, color: Colors.white),
+                          style: TextStyle(
+                              decoration: TextDecoration.underline,
+                              color: Colors.white),
                         ),
                       ),
                     ],

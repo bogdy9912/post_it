@@ -1,6 +1,5 @@
 export 'auth/index.dart';
 
-
 abstract class AppAction {
   const AppAction();
 }

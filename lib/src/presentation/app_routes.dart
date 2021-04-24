@@ -12,7 +12,6 @@ class AppRoutes {
   static const String addPost = '/addPost';
 
   static Map<String, WidgetBuilder> routes = <String, WidgetBuilder>{
-
     home: (BuildContext context) => const Home(),
     register: (BuildContext context) => const RegisterPage(),
     login: (BuildContext context) => const LoginPage(),

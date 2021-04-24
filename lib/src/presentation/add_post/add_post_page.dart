@@ -24,15 +24,22 @@ class _AddPostPageState extends State<AddPostPage> {
   @override
   Widget build(BuildContext context) {
     return UserContainer(
-      builder:(BuildContext context, AppUser? user) => Scaffold(
+      builder: (BuildContext context, AppUser? user) => Scaffold(
         appBar: AppBar(
-          title: const Text('post a message'),
+          title: const Text(
+            'Add New Post',
+            style: TextStyle(
+                color: Colors.white, fontSize: 18, fontWeight: FontWeight.bold),
+          ),
+          centerTitle: true,
+          iconTheme: const IconThemeData(color: Colors.white),
         ),
         body: Column(
           children: <Widget>[
             Expanded(
               child: Padding(
-                padding: const EdgeInsets.only(top: 28.0, left: 24.0, right: 24.0),
+                padding:
+                    const EdgeInsets.only(top: 28.0, left: 24.0, right: 24.0),
                 child: TextField(
                   controller: _message,
                   decoration: const InputDecoration(
@@ -44,11 +51,15 @@ class _AddPostPageState extends State<AddPostPage> {
               ),
             ),
             ConstrainedBox(
-              constraints: const BoxConstraints.tightFor(width: double.infinity, height: 48),
+              constraints: const BoxConstraints.tightFor(
+                  width: double.infinity, height: 48),
               child: ElevatedButton(
                 onPressed: () {
-                  StoreProvider.of<AppState>(context).dispatch(
-                      CreatePost(message: _message.text,token: user?.token, response: (AppAction action) => _response(context, action)));
+                  StoreProvider.of<AppState>(context).dispatch(CreatePost(
+                      message: _message.text,
+                      token: user?.token,
+                      response: (AppAction action) =>
+                          _response(context, action)));
                 },
                 child: const Text('SUBMIT'),
               ),

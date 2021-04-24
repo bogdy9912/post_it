@@ -17,7 +17,8 @@ class PostsEpics {
     ]);
   }
 
-  Stream<AppAction> _getFeed(Stream<GetFeed$> actions, EpicStore<AppState> store) {
+  Stream<AppAction> _getFeed(
+      Stream<GetFeed$> actions, EpicStore<AppState> store) {
     return actions //
         .flatMap((GetFeed$ action) => Stream<GetFeed$>.value(action)
             .flatMap((GetFeed$ action) => api.getFeed())
@@ -26,10 +27,12 @@ class PostsEpics {
             .onErrorReturnWith((dynamic error) => GetFeed.error(error)));
   }
 
-  Stream<AppAction> _createPost(Stream<CreatePost$> actions, EpicStore<AppState> store) {
+  Stream<AppAction> _createPost(
+      Stream<CreatePost$> actions, EpicStore<AppState> store) {
     return actions //
         .flatMap((CreatePost$ action) => Stream<CreatePost$>.value(action)
-            .asyncMap((CreatePost$ action) => api.createPost(message: action.message, token: action.token))
+            .asyncMap((CreatePost$ action) =>
+                api.createPost(message: action.message, token: action.token))
             .mapTo(const CreatePost.successful())
             .onErrorReturnWith((dynamic error) => CreatePost.error(error))
             .doOnData(action.response));

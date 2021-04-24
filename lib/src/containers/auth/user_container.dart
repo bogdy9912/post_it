@@ -11,6 +11,7 @@ class UserContainer extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return StoreConnector<AppState, AppUser?>(
-        builder: builder, converter: (Store<AppState> store) => store.state.auth.user);
+        builder: builder,
+        converter: (Store<AppState> store) => store.state.auth.user);
   }
 }

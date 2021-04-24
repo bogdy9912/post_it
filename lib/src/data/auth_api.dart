@@ -8,11 +8,17 @@ class AuthApi {
 
   final String _baseUrl;
 
-  Future<AppUser> register({required String username, required String password, required String displayName}) async {
+  Future<AppUser> register(
+      {required String username,
+      required String password,
+      required String displayName}) async {
     final Uri url = Uri.parse(_baseUrl + 'register');
 
-    final http.Response response = await http
-        .post(url, body: <String, dynamic>{'username': username, 'password': password, 'display_name': displayName});
+    final http.Response response = await http.post(url, body: <String, dynamic>{
+      'username': username,
+      'password': password,
+      'display_name': displayName
+    });
 
     if (json.decode(response.body)['error'] != null) {
       print(json.decode(response.body).toString());
@@ -20,7 +26,8 @@ class AuthApi {
       throw json.decode(response.body)['error'];
     }
 
-    final AppUser user = AppUser.fromJson(json.decode(response.body)['data']['user']);
+    final AppUser user =
+        AppUser.fromJson(json.decode(response.body)['data']['user']);
     final AppUser finalUser = AppUser((AppUserBuilder b) {
       b.uid = user.uid;
       b.username = user.username;
@@ -31,13 +38,15 @@ class AuthApi {
     return finalUser;
   }
 
-  Future<AppUser> login({required String username, required String password}) async {
+  Future<AppUser> login(
+      {required String username, required String password}) async {
     final Uri url = Uri.parse(_baseUrl + 'login');
 
-    final http.Response response =
-        await http.post(url, body: <String, dynamic>{'username': username, 'password': password});
+    final http.Response response = await http.post(url,
+        body: <String, dynamic>{'username': username, 'password': password});
 
-    final AppUser user = AppUser.fromJson(json.decode(response.body)['data']['user']);
+    final AppUser user =
+        AppUser.fromJson(json.decode(response.body)['data']['user']);
 
     final AppUser finalUser = AppUser((AppUserBuilder b) {
       b.uid = user.uid;

@@ -12,8 +12,7 @@ class Home extends StatelessWidget {
     return UserContainer(builder: (BuildContext context, AppUser? user) {
       if (user == null) {
         return const LoginPage();
-      }
-      else {
+      } else {
         return const FeedPage();
       }
     });

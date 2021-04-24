@@ -13,7 +13,7 @@ AppState _reducer(AppState state, dynamic action) {
   return state.rebuild((AppStateBuilder b) {
     b
       ..auth = authReducer(state.auth, action).toBuilder()
-    ..postsState = postsReducer(state.postsState, action).toBuilder();
+      ..postsState = postsReducer(state.postsState, action).toBuilder();
   });
 }
 

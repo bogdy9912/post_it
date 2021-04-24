@@ -21,8 +21,7 @@ class _RegisterPageState extends State<RegisterPage> {
   void _response(AppAction action) {
     if (action is RegisterError) {
       print('rrrr: ${action.error.toString()}');
-    }else
-    if (action is RegisterSuccessful){
+    } else if (action is RegisterSuccessful) {
       Navigator.pushNamedAndRemoveUntil(context, AppRoutes.home, (_) => false);
     }
   }
@@ -143,7 +142,8 @@ class _RegisterPageState extends State<RegisterPage> {
                   ),
                   const SizedBox(height: 8),
                   ConstrainedBox(
-                    constraints: const BoxConstraints.tightFor(width: double.infinity, height: 48),
+                    constraints: const BoxConstraints.tightFor(
+                        width: double.infinity, height: 48),
                     child: ElevatedButton(
                       onPressed: () {
                         final bool valid = Form.of(context)!.validate();
