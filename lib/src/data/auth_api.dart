@@ -1,6 +1,8 @@
 import 'dart:convert';
 
+
 import 'package:http/http.dart' as http;
+
 import 'package:post_it/src/models/auth/index.dart';
 
 class AuthApi {
@@ -21,8 +23,10 @@ class AuthApi {
     });
 
     if (json.decode(response.body)['error'] != null) {
-      print(json.decode(response.body).toString());
-      print(json.decode(response.body)['error']);
+//      print(json.decode(response.body).toString());
+//      print(json.decode(response.body)['error']);
+
+//      throw 'Erroare';
       throw json.decode(response.body)['error'];
     }
 
@@ -54,8 +58,6 @@ class AuthApi {
       b.displayName = user.displayName;
       b.token = json.decode(response.body)['data']['token'];
     });
-
-    print(finalUser.token);
 
     return finalUser;
   }

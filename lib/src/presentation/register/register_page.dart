@@ -4,6 +4,7 @@ import 'package:post_it/src/actions/auth/index.dart';
 import 'package:post_it/src/actions/index.dart';
 import 'package:post_it/src/models/index.dart';
 import 'package:post_it/src/presentation/app_routes.dart';
+import 'package:post_it/src/presentation/mixin/dialog_mixin.dart';
 
 class RegisterPage extends StatefulWidget {
   const RegisterPage();
@@ -12,7 +13,7 @@ class RegisterPage extends StatefulWidget {
   _RegisterPageState createState() => _RegisterPageState();
 }
 
-class _RegisterPageState extends State<RegisterPage> {
+class _RegisterPageState extends State<RegisterPage> with DialogMixin{
   final TextEditingController _displayName = TextEditingController();
   final TextEditingController _username = TextEditingController();
   final TextEditingController _password = TextEditingController();
@@ -21,6 +22,7 @@ class _RegisterPageState extends State<RegisterPage> {
   void _response(AppAction action) {
     if (action is RegisterError) {
       print('rrrr: ${action.error.toString()}');
+      showError(context, 'Register Error', action.error);
     } else if (action is RegisterSuccessful) {
       Navigator.pushNamedAndRemoveUntil(context, AppRoutes.home, (_) => false);
     }

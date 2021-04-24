@@ -12,14 +12,13 @@ class PostsApi {
     final Uri url = Uri.parse(_baseUrl);
 
     while (true) {
-//      await Future.delayed(Duration(seconds: 1));
+      await Future<dynamic>.delayed(const Duration(seconds: 1));
       final http.Response response = await http.get(url);
       final List<dynamic> postsList = json.decode(response.body)['data'];
 
       final List<Post> result =
           postsList.map((dynamic e) => Post.fromJson(e)).toList();
       yield result;
-//      yield random.nextDouble();
     }
   }
 
@@ -32,7 +31,5 @@ class PostsApi {
         body: <String, dynamic>{
           'message': message
         });
-    print('dat');
-    print(response.body);
   }
 }
