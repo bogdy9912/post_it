@@ -1,0 +1,25 @@
+part of auth_models;
+
+abstract class AppUser implements Built<AppUser, AppUserBuilder> {
+  factory AppUser([void Function(AppUserBuilder b) updates]) = _$AppUser;
+  factory AppUser.fromJson(dynamic json) => serializers.deserializeWith(serializer, json)!;
+
+  AppUser._();
+
+  @BuiltValueField(wireName: 'id')
+  int get uid;
+
+  String get username;
+
+  @BuiltValueField(wireName: 'display_name')
+  String get displayName;
+
+  String? get token;
+
+
+
+
+  Map<String, dynamic> get json => serializers.serializeWith(serializer, this) as Map<String, dynamic>;
+
+  static Serializer<AppUser> get serializer => _$appUserSerializer;
+}
