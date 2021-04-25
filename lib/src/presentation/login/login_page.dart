@@ -23,7 +23,6 @@ class _LoginPageState extends State<LoginPage> with DialogMixin {
       showError(context, 'Login error', action.error);
     } else if (action is LoginSuccessful) {
       StoreProvider.of<AppState>(context).dispatch(const GetFeed());
-//      print('LALALLA');
     }
   }
 

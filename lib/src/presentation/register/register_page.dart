@@ -21,7 +21,6 @@ class _RegisterPageState extends State<RegisterPage> with DialogMixin {
 
   void _response(AppAction action) {
     if (action is RegisterError) {
-      print('rrrr: ${action.error.toString()}');
       showError(context, 'Register Error', action.error);
     } else if (action is RegisterSuccessful) {
       Navigator.pushNamedAndRemoveUntil(context, AppRoutes.home, (_) => false);

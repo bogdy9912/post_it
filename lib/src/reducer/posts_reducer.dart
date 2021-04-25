@@ -5,7 +5,6 @@ import 'package:redux/redux.dart';
 
 Reducer<PostsState> postsReducer = combineReducers<PostsState>(<Reducer<PostsState>>[
   TypedReducer<PostsState, GetFeedSuccessful>(_getFeedSuccessful),
-//  TypedReducer<PostsState, CreatePostSuccessful>(_createPostSuccessful),
 ]);
 
 PostsState _getFeedSuccessful(PostsState state, GetFeedSuccessful action) {
