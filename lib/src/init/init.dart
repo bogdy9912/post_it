@@ -7,10 +7,8 @@ import 'package:redux/redux.dart';
 import 'package:redux_epics/redux_epics.dart';
 
 Future<Store<AppState>> init() async {
-  final AuthApi authApi =
-      AuthApi(baseUrl: 'https://intern-hackathon.mready.net/api/auth/');
-  final PostsApi postsApi =
-      PostsApi(baseUrl: 'https://intern-hackathon.mready.net/api/posts');
+  final AuthApi authApi = AuthApi(baseUrl: 'https://intern-hackathon.mready.net/api/auth/');
+  final PostsApi postsApi = PostsApi(baseUrl: 'https://intern-hackathon.mready.net/api/posts');
   final AppEpics epic = AppEpics(authApi: authApi, postsApi: postsApi);
 
   return Store<AppState>(

@@ -22,19 +22,14 @@ class _$AppUserSerializer implements StructuredSerializer<AppUser> {
       'id',
       serializers.serialize(object.uid, specifiedType: const FullType(int)),
       'username',
-      serializers.serialize(object.username,
-          specifiedType: const FullType(String)),
+      serializers.serialize(object.username, specifiedType: const FullType(String)),
       'display_name',
-      serializers.serialize(object.displayName,
-          specifiedType: const FullType(String)),
+      serializers.serialize(object.displayName, specifiedType: const FullType(String)),
     ];
     Object? value;
     value = object.token;
     if (value != null) {
-      result
-        ..add('token')
-        ..add(serializers.serialize(value,
-            specifiedType: const FullType(String)));
+      result..add('token')..add(serializers.serialize(value, specifiedType: const FullType(String)));
     }
     return result;
   }
@@ -51,20 +46,16 @@ class _$AppUserSerializer implements StructuredSerializer<AppUser> {
       final Object? value = iterator.current;
       switch (key) {
         case 'id':
-          result.uid = serializers.deserialize(value,
-              specifiedType: const FullType(int)) as int;
+          result.uid = serializers.deserialize(value, specifiedType: const FullType(int)) as int;
           break;
         case 'username':
-          result.username = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String;
+          result.username = serializers.deserialize(value, specifiedType: const FullType(String)) as String;
           break;
         case 'display_name':
-          result.displayName = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String;
+          result.displayName = serializers.deserialize(value, specifiedType: const FullType(String)) as String;
           break;
         case 'token':
-          result.token = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String;
+          result.token = serializers.deserialize(value, specifiedType: const FullType(String)) as String;
           break;
       }
     }
@@ -86,10 +77,7 @@ class _$AuthStateSerializer implements StructuredSerializer<AuthState> {
     Object? value;
     value = object.user;
     if (value != null) {
-      result
-        ..add('user')
-        ..add(serializers.serialize(value,
-            specifiedType: const FullType(AppUser)));
+      result..add('user')..add(serializers.serialize(value, specifiedType: const FullType(AppUser)));
     }
     return result;
   }
@@ -106,8 +94,7 @@ class _$AuthStateSerializer implements StructuredSerializer<AuthState> {
       final Object? value = iterator.current;
       switch (key) {
         case 'user':
-          result.user.replace(serializers.deserialize(value,
-              specifiedType: const FullType(AppUser))! as AppUser);
+          result.user.replace(serializers.deserialize(value, specifiedType: const FullType(AppUser))! as AppUser);
           break;
       }
     }
@@ -126,24 +113,16 @@ class _$AppUser extends AppUser {
   @override
   final String? token;
 
-  factory _$AppUser([void Function(AppUserBuilder)? updates]) =>
-      (new AppUserBuilder()..update(updates)).build();
+  factory _$AppUser([void Function(AppUserBuilder)? updates]) => (new AppUserBuilder()..update(updates)).build();
 
-  _$AppUser._(
-      {required this.uid,
-      required this.username,
-      required this.displayName,
-      this.token})
-      : super._() {
+  _$AppUser._({required this.uid, required this.username, required this.displayName, this.token}) : super._() {
     BuiltValueNullFieldError.checkNotNull(uid, 'AppUser', 'uid');
     BuiltValueNullFieldError.checkNotNull(username, 'AppUser', 'username');
-    BuiltValueNullFieldError.checkNotNull(
-        displayName, 'AppUser', 'displayName');
+    BuiltValueNullFieldError.checkNotNull(displayName, 'AppUser', 'displayName');
   }
 
   @override
-  AppUser rebuild(void Function(AppUserBuilder) updates) =>
-      (toBuilder()..update(updates)).build();
+  AppUser rebuild(void Function(AppUserBuilder) updates) => (toBuilder()..update(updates)).build();
 
   @override
   AppUserBuilder toBuilder() => new AppUserBuilder()..replace(this);
@@ -160,9 +139,7 @@ class _$AppUser extends AppUser {
 
   @override
   int get hashCode {
-    return $jf($jc(
-        $jc($jc($jc(0, uid.hashCode), username.hashCode), displayName.hashCode),
-        token.hashCode));
+    return $jf($jc($jc($jc($jc(0, uid.hashCode), username.hashCode), displayName.hashCode), token.hashCode));
   }
 
   @override
@@ -225,10 +202,8 @@ class AppUserBuilder implements Builder<AppUser, AppUserBuilder> {
     final _$result = _$v ??
         new _$AppUser._(
             uid: BuiltValueNullFieldError.checkNotNull(uid, 'AppUser', 'uid'),
-            username: BuiltValueNullFieldError.checkNotNull(
-                username, 'AppUser', 'username'),
-            displayName: BuiltValueNullFieldError.checkNotNull(
-                displayName, 'AppUser', 'displayName'),
+            username: BuiltValueNullFieldError.checkNotNull(username, 'AppUser', 'username'),
+            displayName: BuiltValueNullFieldError.checkNotNull(displayName, 'AppUser', 'displayName'),
             token: token);
     replace(_$result);
     return _$result;
@@ -239,14 +214,12 @@ class _$AuthState extends AuthState {
   @override
   final AppUser? user;
 
-  factory _$AuthState([void Function(AuthStateBuilder)? updates]) =>
-      (new AuthStateBuilder()..update(updates)).build();
+  factory _$AuthState([void Function(AuthStateBuilder)? updates]) => (new AuthStateBuilder()..update(updates)).build();
 
   _$AuthState._({this.user}) : super._();
 
   @override
-  AuthState rebuild(void Function(AuthStateBuilder) updates) =>
-      (toBuilder()..update(updates)).build();
+  AuthState rebuild(void Function(AuthStateBuilder) updates) => (toBuilder()..update(updates)).build();
 
   @override
   AuthStateBuilder toBuilder() => new AuthStateBuilder()..replace(this);
@@ -264,8 +237,7 @@ class _$AuthState extends AuthState {
 
   @override
   String toString() {
-    return (newBuiltValueToStringHelper('AuthState')..add('user', user))
-        .toString();
+    return (newBuiltValueToStringHelper('AuthState')..add('user', user)).toString();
   }
 }
 
@@ -309,8 +281,7 @@ class AuthStateBuilder implements Builder<AuthState, AuthStateBuilder> {
         _$failedField = 'user';
         _user?.build();
       } catch (e) {
-        throw new BuiltValueNestedFieldError(
-            'AuthState', _$failedField, e.toString());
+        throw new BuiltValueNestedFieldError('AuthState', _$failedField, e.toString());
       }
       rethrow;
     }

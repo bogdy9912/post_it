@@ -80,8 +80,7 @@ mixin _$GetFeed {
 
 /// @nodoc
 abstract class $GetFeedCopyWith<$Res> {
-  factory $GetFeedCopyWith(GetFeed value, $Res Function(GetFeed) then) =
-      _$GetFeedCopyWithImpl<$Res>;
+  factory $GetFeedCopyWith(GetFeed value, $Res Function(GetFeed) then) = _$GetFeedCopyWithImpl<$Res>;
 }
 
 /// @nodoc
@@ -95,15 +94,12 @@ class _$GetFeedCopyWithImpl<$Res> implements $GetFeedCopyWith<$Res> {
 
 /// @nodoc
 abstract class $GetFeed$CopyWith<$Res> {
-  factory $GetFeed$CopyWith(GetFeed$ value, $Res Function(GetFeed$) then) =
-      _$GetFeed$CopyWithImpl<$Res>;
+  factory $GetFeed$CopyWith(GetFeed$ value, $Res Function(GetFeed$) then) = _$GetFeed$CopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class _$GetFeed$CopyWithImpl<$Res> extends _$GetFeedCopyWithImpl<$Res>
-    implements $GetFeed$CopyWith<$Res> {
-  _$GetFeed$CopyWithImpl(GetFeed$ _value, $Res Function(GetFeed$) _then)
-      : super(_value, (v) => _then(v as GetFeed$));
+class _$GetFeed$CopyWithImpl<$Res> extends _$GetFeedCopyWithImpl<$Res> implements $GetFeed$CopyWith<$Res> {
+  _$GetFeed$CopyWithImpl(GetFeed$ _value, $Res Function(GetFeed$) _then) : super(_value, (v) => _then(v as GetFeed$));
 
   @override
   GetFeed$ get _value => super._value as GetFeed$;
@@ -185,8 +181,7 @@ abstract class GetFeed$ implements GetFeed {
 
 /// @nodoc
 abstract class $GetFeedSuccessfulCopyWith<$Res> {
-  factory $GetFeedSuccessfulCopyWith(
-          GetFeedSuccessful value, $Res Function(GetFeedSuccessful) then) =
+  factory $GetFeedSuccessfulCopyWith(GetFeedSuccessful value, $Res Function(GetFeedSuccessful) then) =
       _$GetFeedSuccessfulCopyWithImpl<$Res>;
   $Res call({List<Post> posts});
 }
@@ -194,8 +189,7 @@ abstract class $GetFeedSuccessfulCopyWith<$Res> {
 /// @nodoc
 class _$GetFeedSuccessfulCopyWithImpl<$Res> extends _$GetFeedCopyWithImpl<$Res>
     implements $GetFeedSuccessfulCopyWith<$Res> {
-  _$GetFeedSuccessfulCopyWithImpl(
-      GetFeedSuccessful _value, $Res Function(GetFeedSuccessful) _then)
+  _$GetFeedSuccessfulCopyWithImpl(GetFeedSuccessful _value, $Res Function(GetFeedSuccessful) _then)
       : super(_value, (v) => _then(v as GetFeedSuccessful));
 
   @override
@@ -230,13 +224,11 @@ class _$GetFeedSuccessful implements GetFeedSuccessful {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other is GetFeedSuccessful &&
-            (identical(other.posts, posts) ||
-                const DeepCollectionEquality().equals(other.posts, posts)));
+            (identical(other.posts, posts) || const DeepCollectionEquality().equals(other.posts, posts)));
   }
 
   @override
-  int get hashCode =>
-      runtimeType.hashCode ^ const DeepCollectionEquality().hash(posts);
+  int get hashCode => runtimeType.hashCode ^ const DeepCollectionEquality().hash(posts);
 
   @JsonKey(ignore: true)
   @override
@@ -301,22 +293,18 @@ abstract class GetFeedSuccessful implements GetFeed {
 
   List<Post> get posts => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
-  $GetFeedSuccessfulCopyWith<GetFeedSuccessful> get copyWith =>
-      throw _privateConstructorUsedError;
+  $GetFeedSuccessfulCopyWith<GetFeedSuccessful> get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 abstract class $GetFeedEventCopyWith<$Res> {
-  factory $GetFeedEventCopyWith(
-          GetFeedEvent value, $Res Function(GetFeedEvent) then) =
+  factory $GetFeedEventCopyWith(GetFeedEvent value, $Res Function(GetFeedEvent) then) =
       _$GetFeedEventCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class _$GetFeedEventCopyWithImpl<$Res> extends _$GetFeedCopyWithImpl<$Res>
-    implements $GetFeedEventCopyWith<$Res> {
-  _$GetFeedEventCopyWithImpl(
-      GetFeedEvent _value, $Res Function(GetFeedEvent) _then)
+class _$GetFeedEventCopyWithImpl<$Res> extends _$GetFeedCopyWithImpl<$Res> implements $GetFeedEventCopyWith<$Res> {
+  _$GetFeedEventCopyWithImpl(GetFeedEvent _value, $Res Function(GetFeedEvent) _then)
       : super(_value, (v) => _then(v as GetFeedEvent));
 
   @override
@@ -399,17 +387,14 @@ abstract class GetFeedEvent implements GetFeed {
 
 /// @nodoc
 abstract class $GetFeedErrorCopyWith<$Res> {
-  factory $GetFeedErrorCopyWith(
-          GetFeedError value, $Res Function(GetFeedError) then) =
+  factory $GetFeedErrorCopyWith(GetFeedError value, $Res Function(GetFeedError) then) =
       _$GetFeedErrorCopyWithImpl<$Res>;
   $Res call({Object error});
 }
 
 /// @nodoc
-class _$GetFeedErrorCopyWithImpl<$Res> extends _$GetFeedCopyWithImpl<$Res>
-    implements $GetFeedErrorCopyWith<$Res> {
-  _$GetFeedErrorCopyWithImpl(
-      GetFeedError _value, $Res Function(GetFeedError) _then)
+class _$GetFeedErrorCopyWithImpl<$Res> extends _$GetFeedCopyWithImpl<$Res> implements $GetFeedErrorCopyWith<$Res> {
+  _$GetFeedErrorCopyWithImpl(GetFeedError _value, $Res Function(GetFeedError) _then)
       : super(_value, (v) => _then(v as GetFeedError));
 
   @override
@@ -446,18 +431,15 @@ class _$GetFeedError implements GetFeedError {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other is GetFeedError &&
-            (identical(other.error, error) ||
-                const DeepCollectionEquality().equals(other.error, error)));
+            (identical(other.error, error) || const DeepCollectionEquality().equals(other.error, error)));
   }
 
   @override
-  int get hashCode =>
-      runtimeType.hashCode ^ const DeepCollectionEquality().hash(error);
+  int get hashCode => runtimeType.hashCode ^ const DeepCollectionEquality().hash(error);
 
   @JsonKey(ignore: true)
   @override
-  $GetFeedErrorCopyWith<GetFeedError> get copyWith =>
-      _$GetFeedErrorCopyWithImpl<GetFeedError>(this, _$identity);
+  $GetFeedErrorCopyWith<GetFeedError> get copyWith => _$GetFeedErrorCopyWithImpl<GetFeedError>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -517,18 +499,14 @@ abstract class GetFeedError implements GetFeed, ErrorAction {
 
   Object get error => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
-  $GetFeedErrorCopyWith<GetFeedError> get copyWith =>
-      throw _privateConstructorUsedError;
+  $GetFeedErrorCopyWith<GetFeedError> get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 class _$CreatePostTearOff {
   const _$CreatePostTearOff();
 
-  CreatePost$ call(
-      {required String message,
-      String? token,
-      required void Function(AppAction) response}) {
+  CreatePost$ call({required String message, String? token, required void Function(AppAction) response}) {
     return CreatePost$(
       message: message,
       token: token,
@@ -554,18 +532,14 @@ const $CreatePost = _$CreatePostTearOff();
 mixin _$CreatePost {
   @optionalTypeArgs
   TResult when<TResult extends Object?>(
-    TResult Function(
-            String message, String? token, void Function(AppAction) response)
-        $default, {
+    TResult Function(String message, String? token, void Function(AppAction) response) $default, {
     required TResult Function() successful,
     required TResult Function(Object error) error,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>(
-    TResult Function(
-            String message, String? token, void Function(AppAction) response)?
-        $default, {
+    TResult Function(String message, String? token, void Function(AppAction) response)? $default, {
     TResult Function()? successful,
     TResult Function(Object error)? error,
     required TResult orElse(),
@@ -590,9 +564,7 @@ mixin _$CreatePost {
 
 /// @nodoc
 abstract class $CreatePostCopyWith<$Res> {
-  factory $CreatePostCopyWith(
-          CreatePost value, $Res Function(CreatePost) then) =
-      _$CreatePostCopyWithImpl<$Res>;
+  factory $CreatePostCopyWith(CreatePost value, $Res Function(CreatePost) then) = _$CreatePostCopyWithImpl<$Res>;
 }
 
 /// @nodoc
@@ -606,17 +578,13 @@ class _$CreatePostCopyWithImpl<$Res> implements $CreatePostCopyWith<$Res> {
 
 /// @nodoc
 abstract class $CreatePost$CopyWith<$Res> {
-  factory $CreatePost$CopyWith(
-          CreatePost$ value, $Res Function(CreatePost$) then) =
-      _$CreatePost$CopyWithImpl<$Res>;
+  factory $CreatePost$CopyWith(CreatePost$ value, $Res Function(CreatePost$) then) = _$CreatePost$CopyWithImpl<$Res>;
   $Res call({String message, String? token, void Function(AppAction) response});
 }
 
 /// @nodoc
-class _$CreatePost$CopyWithImpl<$Res> extends _$CreatePostCopyWithImpl<$Res>
-    implements $CreatePost$CopyWith<$Res> {
-  _$CreatePost$CopyWithImpl(
-      CreatePost$ _value, $Res Function(CreatePost$) _then)
+class _$CreatePost$CopyWithImpl<$Res> extends _$CreatePostCopyWithImpl<$Res> implements $CreatePost$CopyWith<$Res> {
+  _$CreatePost$CopyWithImpl(CreatePost$ _value, $Res Function(CreatePost$) _then)
       : super(_value, (v) => _then(v as CreatePost$));
 
   @override
@@ -647,8 +615,7 @@ class _$CreatePost$CopyWithImpl<$Res> extends _$CreatePostCopyWithImpl<$Res>
 
 /// @nodoc
 class _$CreatePost$ implements CreatePost$ {
-  const _$CreatePost$(
-      {required this.message, this.token, required this.response});
+  const _$CreatePost$({required this.message, this.token, required this.response});
 
   @override
   final String message;
@@ -666,14 +633,9 @@ class _$CreatePost$ implements CreatePost$ {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other is CreatePost$ &&
-            (identical(other.message, message) ||
-                const DeepCollectionEquality()
-                    .equals(other.message, message)) &&
-            (identical(other.token, token) ||
-                const DeepCollectionEquality().equals(other.token, token)) &&
-            (identical(other.response, response) ||
-                const DeepCollectionEquality()
-                    .equals(other.response, response)));
+            (identical(other.message, message) || const DeepCollectionEquality().equals(other.message, message)) &&
+            (identical(other.token, token) || const DeepCollectionEquality().equals(other.token, token)) &&
+            (identical(other.response, response) || const DeepCollectionEquality().equals(other.response, response)));
   }
 
   @override
@@ -685,15 +647,12 @@ class _$CreatePost$ implements CreatePost$ {
 
   @JsonKey(ignore: true)
   @override
-  $CreatePost$CopyWith<CreatePost$> get copyWith =>
-      _$CreatePost$CopyWithImpl<CreatePost$>(this, _$identity);
+  $CreatePost$CopyWith<CreatePost$> get copyWith => _$CreatePost$CopyWithImpl<CreatePost$>(this, _$identity);
 
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>(
-    TResult Function(
-            String message, String? token, void Function(AppAction) response)
-        $default, {
+    TResult Function(String message, String? token, void Function(AppAction) response) $default, {
     required TResult Function() successful,
     required TResult Function(Object error) error,
   }) {
@@ -703,9 +662,7 @@ class _$CreatePost$ implements CreatePost$ {
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>(
-    TResult Function(
-            String message, String? token, void Function(AppAction) response)?
-        $default, {
+    TResult Function(String message, String? token, void Function(AppAction) response)? $default, {
     TResult Function()? successful,
     TResult Function(Object error)? error,
     required TResult orElse(),
@@ -742,32 +699,26 @@ class _$CreatePost$ implements CreatePost$ {
 }
 
 abstract class CreatePost$ implements CreatePost {
-  const factory CreatePost$(
-      {required String message,
-      String? token,
-      required void Function(AppAction) response}) = _$CreatePost$;
+  const factory CreatePost$({required String message, String? token, required void Function(AppAction) response}) =
+      _$CreatePost$;
 
   String get message => throw _privateConstructorUsedError;
   String? get token => throw _privateConstructorUsedError;
   void Function(AppAction) get response => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
-  $CreatePost$CopyWith<CreatePost$> get copyWith =>
-      throw _privateConstructorUsedError;
+  $CreatePost$CopyWith<CreatePost$> get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 abstract class $CreatePostSuccessfulCopyWith<$Res> {
-  factory $CreatePostSuccessfulCopyWith(CreatePostSuccessful value,
-          $Res Function(CreatePostSuccessful) then) =
+  factory $CreatePostSuccessfulCopyWith(CreatePostSuccessful value, $Res Function(CreatePostSuccessful) then) =
       _$CreatePostSuccessfulCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class _$CreatePostSuccessfulCopyWithImpl<$Res>
-    extends _$CreatePostCopyWithImpl<$Res>
+class _$CreatePostSuccessfulCopyWithImpl<$Res> extends _$CreatePostCopyWithImpl<$Res>
     implements $CreatePostSuccessfulCopyWith<$Res> {
-  _$CreatePostSuccessfulCopyWithImpl(
-      CreatePostSuccessful _value, $Res Function(CreatePostSuccessful) _then)
+  _$CreatePostSuccessfulCopyWithImpl(CreatePostSuccessful _value, $Res Function(CreatePostSuccessful) _then)
       : super(_value, (v) => _then(v as CreatePostSuccessful));
 
   @override
@@ -794,9 +745,7 @@ class _$CreatePostSuccessful implements CreatePostSuccessful {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>(
-    TResult Function(
-            String message, String? token, void Function(AppAction) response)
-        $default, {
+    TResult Function(String message, String? token, void Function(AppAction) response) $default, {
     required TResult Function() successful,
     required TResult Function(Object error) error,
   }) {
@@ -806,9 +755,7 @@ class _$CreatePostSuccessful implements CreatePostSuccessful {
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>(
-    TResult Function(
-            String message, String? token, void Function(AppAction) response)?
-        $default, {
+    TResult Function(String message, String? token, void Function(AppAction) response)? $default, {
     TResult Function()? successful,
     TResult Function(Object error)? error,
     required TResult orElse(),
@@ -850,8 +797,7 @@ abstract class CreatePostSuccessful implements CreatePost {
 
 /// @nodoc
 abstract class $CreatePostErrorCopyWith<$Res> {
-  factory $CreatePostErrorCopyWith(
-          CreatePostError value, $Res Function(CreatePostError) then) =
+  factory $CreatePostErrorCopyWith(CreatePostError value, $Res Function(CreatePostError) then) =
       _$CreatePostErrorCopyWithImpl<$Res>;
   $Res call({Object error});
 }
@@ -859,8 +805,7 @@ abstract class $CreatePostErrorCopyWith<$Res> {
 /// @nodoc
 class _$CreatePostErrorCopyWithImpl<$Res> extends _$CreatePostCopyWithImpl<$Res>
     implements $CreatePostErrorCopyWith<$Res> {
-  _$CreatePostErrorCopyWithImpl(
-      CreatePostError _value, $Res Function(CreatePostError) _then)
+  _$CreatePostErrorCopyWithImpl(CreatePostError _value, $Res Function(CreatePostError) _then)
       : super(_value, (v) => _then(v as CreatePostError));
 
   @override
@@ -897,13 +842,11 @@ class _$CreatePostError implements CreatePostError {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other is CreatePostError &&
-            (identical(other.error, error) ||
-                const DeepCollectionEquality().equals(other.error, error)));
+            (identical(other.error, error) || const DeepCollectionEquality().equals(other.error, error)));
   }
 
   @override
-  int get hashCode =>
-      runtimeType.hashCode ^ const DeepCollectionEquality().hash(error);
+  int get hashCode => runtimeType.hashCode ^ const DeepCollectionEquality().hash(error);
 
   @JsonKey(ignore: true)
   @override
@@ -913,9 +856,7 @@ class _$CreatePostError implements CreatePostError {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>(
-    TResult Function(
-            String message, String? token, void Function(AppAction) response)
-        $default, {
+    TResult Function(String message, String? token, void Function(AppAction) response) $default, {
     required TResult Function() successful,
     required TResult Function(Object error) error,
   }) {
@@ -925,9 +866,7 @@ class _$CreatePostError implements CreatePostError {
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>(
-    TResult Function(
-            String message, String? token, void Function(AppAction) response)?
-        $default, {
+    TResult Function(String message, String? token, void Function(AppAction) response)? $default, {
     TResult Function()? successful,
     TResult Function(Object error)? error,
     required TResult orElse(),
@@ -968,6 +907,5 @@ abstract class CreatePostError implements CreatePost, ErrorAction {
 
   Object get error => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
-  $CreatePostErrorCopyWith<CreatePostError> get copyWith =>
-      throw _privateConstructorUsedError;
+  $CreatePostErrorCopyWith<CreatePostError> get copyWith => throw _privateConstructorUsedError;
 }

@@ -22,8 +22,7 @@ ThemeData buildThemeData(BuildContext context) {
     scaffoldBackgroundColor: const Color(0xFF383A47),
     dialogBackgroundColor: const Color(0xFF292B36),
     elevatedButtonTheme: ElevatedButtonThemeData(
-      style: ButtonStyle(
-          backgroundColor: MaterialStateProperty.all(const Color(0xFF5969FF))),
+      style: ButtonStyle(backgroundColor: MaterialStateProperty.all(const Color(0xFF5969FF))),
     ),
   );
 }

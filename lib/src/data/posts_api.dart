@@ -16,18 +16,15 @@ class PostsApi {
       final http.Response response = await http.get(url);
       final List<dynamic> postsList = json.decode(response.body)['data'];
 
-      final List<Post> result =
-          postsList.map((dynamic e) => Post.fromJson(e)).toList();
+      final List<Post> result = postsList.map((dynamic e) => Post.fromJson(e)).toList();
       yield result;
     }
   }
 
   Future<void> createPost({required String message, String? token}) async {
     final Uri url = Uri.parse(_baseUrl);
-    await http.post(url, headers: <String, String>{
-      'Authorization': token == null ? '' : 'Bearer $token'
-    }, body: <String, dynamic>{
-      'message': message
-    });
+    await http.post(url,
+        headers: <String, String>{'Authorization': token == null ? '' : 'Bearer $token'},
+        body: <String, dynamic>{'message': message});
   }
 }

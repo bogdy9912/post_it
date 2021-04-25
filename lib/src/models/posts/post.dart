@@ -2,8 +2,7 @@ part of posts_models;
 
 abstract class Post implements Built<Post, PostBuilder> {
   factory Post([void Function(PostBuilder b) updates]) = _$Post;
-  factory Post.fromJson(dynamic json) =>
-      serializers.deserializeWith(serializer, json)!;
+  factory Post.fromJson(dynamic json) => serializers.deserializeWith(serializer, json)!;
 
   Post._();
 
@@ -20,8 +19,7 @@ abstract class Post implements Built<Post, PostBuilder> {
   @BuiltValueField(wireName: 'created_at')
   String get createdAt;
 
-  Map<String, dynamic> get json =>
-      serializers.serializeWith(serializer, this) as Map<String, dynamic>;
+  Map<String, dynamic> get json => serializers.serializeWith(serializer, this) as Map<String, dynamic>;
 
   static Serializer<Post> get serializer => _$postSerializer;
 }

@@ -144,8 +144,7 @@ class _RegisterPageState extends State<RegisterPage> with DialogMixin {
                   ),
                   const SizedBox(height: 8),
                   ConstrainedBox(
-                    constraints: const BoxConstraints.tightFor(
-                        width: double.infinity, height: 48),
+                    constraints: const BoxConstraints.tightFor(width: double.infinity, height: 48),
                     child: ElevatedButton(
                       onPressed: () {
                         final bool valid = Form.of(context)!.validate();

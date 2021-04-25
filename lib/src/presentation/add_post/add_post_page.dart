@@ -28,8 +28,7 @@ class _AddPostPageState extends State<AddPostPage> {
         appBar: AppBar(
           title: const Text(
             'Add New Post',
-            style: TextStyle(
-                color: Colors.white, fontSize: 18, fontWeight: FontWeight.bold),
+            style: TextStyle(color: Colors.white, fontSize: 18, fontWeight: FontWeight.bold),
           ),
           centerTitle: true,
           iconTheme: const IconThemeData(color: Colors.white),
@@ -38,8 +37,7 @@ class _AddPostPageState extends State<AddPostPage> {
           children: <Widget>[
             Expanded(
               child: Padding(
-                padding:
-                    const EdgeInsets.only(top: 28.0, left: 24.0, right: 24.0),
+                padding: const EdgeInsets.only(top: 28.0, left: 24.0, right: 24.0),
                 child: TextField(
                   controller: _message,
                   decoration: const InputDecoration(
@@ -51,15 +49,13 @@ class _AddPostPageState extends State<AddPostPage> {
               ),
             ),
             ConstrainedBox(
-              constraints: const BoxConstraints.tightFor(
-                  width: double.infinity, height: 48),
+              constraints: const BoxConstraints.tightFor(width: double.infinity, height: 48),
               child: ElevatedButton(
                 onPressed: () {
                   StoreProvider.of<AppState>(context).dispatch(CreatePost(
                       message: _message.text,
                       token: user?.token,
-                      response: (AppAction action) =>
-                          _response(context, action)));
+                      response: (AppAction action) => _response(context, action)));
                 },
                 child: const Text('SUBMIT'),
               ),

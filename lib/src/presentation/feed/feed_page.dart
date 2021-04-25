@@ -33,8 +33,7 @@ class FeedPage extends StatelessWidget {
                   color: Colors.white,
                 ),
                 onPressed: () {
-                  StoreProvider.of<AppState>(context)
-                      .dispatch(const GetFeed.event());
+                  StoreProvider.of<AppState>(context).dispatch(const GetFeed.event());
                   StoreProvider.of<AppState>(context).dispatch(const SignOut());
                 },
               ),
@@ -44,20 +43,16 @@ class FeedPage extends StatelessWidget {
             children: <Widget>[
               Expanded(
                 child: Padding(
-                  padding:
-                      const EdgeInsets.only(top: 16.0, left: 16.0, right: 16.0),
+                  padding: const EdgeInsets.only(top: 16.0, left: 16.0, right: 16.0),
                   child: ListView.separated(
-                    separatorBuilder: (BuildContext context, int index) =>
-                        const SizedBox(height: 6),
+                    separatorBuilder: (BuildContext context, int index) => const SizedBox(height: 6),
                     itemCount: posts.length,
-                    itemBuilder: (BuildContext context, int index) =>
-                        PostItem(posts[index]),
+                    itemBuilder: (BuildContext context, int index) => PostItem(posts[index]),
                   ),
                 ),
               ),
               ConstrainedBox(
-                constraints: const BoxConstraints.tightFor(
-                    width: double.infinity, height: 48),
+                constraints: const BoxConstraints.tightFor(width: double.infinity, height: 48),
                 child: ElevatedButton(
                   onPressed: () {
                     Navigator.pushNamed(context, AppRoutes.addPost);

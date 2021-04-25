@@ -16,31 +16,23 @@ class _$PostSerializer implements StructuredSerializer<Post> {
   final String wireName = 'Post';
 
   @override
-  Iterable<Object?> serialize(Serializers serializers, Post object,
-      {FullType specifiedType = FullType.unspecified}) {
+  Iterable<Object?> serialize(Serializers serializers, Post object, {FullType specifiedType = FullType.unspecified}) {
     final result = <Object?>[
       'id',
       serializers.serialize(object.id, specifiedType: const FullType(int)),
       'message',
-      serializers.serialize(object.message,
-          specifiedType: const FullType(String)),
+      serializers.serialize(object.message, specifiedType: const FullType(String)),
       'created_at',
-      serializers.serialize(object.createdAt,
-          specifiedType: const FullType(String)),
+      serializers.serialize(object.createdAt, specifiedType: const FullType(String)),
     ];
     Object? value;
     value = object.userId;
     if (value != null) {
-      result
-        ..add('user_id')
-        ..add(serializers.serialize(value, specifiedType: const FullType(int)));
+      result..add('user_id')..add(serializers.serialize(value, specifiedType: const FullType(int)));
     }
     value = object.displayName;
     if (value != null) {
-      result
-        ..add('display_name')
-        ..add(serializers.serialize(value,
-            specifiedType: const FullType(String)));
+      result..add('display_name')..add(serializers.serialize(value, specifiedType: const FullType(String)));
     }
     return result;
   }
@@ -57,24 +49,19 @@ class _$PostSerializer implements StructuredSerializer<Post> {
       final Object? value = iterator.current;
       switch (key) {
         case 'id':
-          result.id = serializers.deserialize(value,
-              specifiedType: const FullType(int)) as int;
+          result.id = serializers.deserialize(value, specifiedType: const FullType(int)) as int;
           break;
         case 'user_id':
-          result.userId = serializers.deserialize(value,
-              specifiedType: const FullType(int)) as int;
+          result.userId = serializers.deserialize(value, specifiedType: const FullType(int)) as int;
           break;
         case 'display_name':
-          result.displayName = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String;
+          result.displayName = serializers.deserialize(value, specifiedType: const FullType(String)) as String;
           break;
         case 'message':
-          result.message = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String;
+          result.message = serializers.deserialize(value, specifiedType: const FullType(String)) as String;
           break;
         case 'created_at':
-          result.createdAt = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String;
+          result.createdAt = serializers.deserialize(value, specifiedType: const FullType(String)) as String;
           break;
       }
     }
@@ -94,9 +81,7 @@ class _$PostsStateSerializer implements StructuredSerializer<PostsState> {
       {FullType specifiedType = FullType.unspecified}) {
     final result = <Object?>[
       'posts',
-      serializers.serialize(object.posts,
-          specifiedType:
-              const FullType(BuiltList, const [const FullType(Post)])),
+      serializers.serialize(object.posts, specifiedType: const FullType(BuiltList, const [const FullType(Post)])),
     ];
 
     return result;
@@ -115,9 +100,7 @@ class _$PostsStateSerializer implements StructuredSerializer<PostsState> {
       switch (key) {
         case 'posts':
           result.posts.replace(serializers.deserialize(value,
-                  specifiedType:
-                      const FullType(BuiltList, const [const FullType(Post)]))!
-              as BuiltList<Object>);
+              specifiedType: const FullType(BuiltList, const [const FullType(Post)]))! as BuiltList<Object>);
           break;
       }
     }
@@ -138,15 +121,9 @@ class _$Post extends Post {
   @override
   final String createdAt;
 
-  factory _$Post([void Function(PostBuilder)? updates]) =>
-      (new PostBuilder()..update(updates)).build();
+  factory _$Post([void Function(PostBuilder)? updates]) => (new PostBuilder()..update(updates)).build();
 
-  _$Post._(
-      {required this.id,
-      this.userId,
-      this.displayName,
-      required this.message,
-      required this.createdAt})
+  _$Post._({required this.id, this.userId, this.displayName, required this.message, required this.createdAt})
       : super._() {
     BuiltValueNullFieldError.checkNotNull(id, 'Post', 'id');
     BuiltValueNullFieldError.checkNotNull(message, 'Post', 'message');
@@ -154,8 +131,7 @@ class _$Post extends Post {
   }
 
   @override
-  Post rebuild(void Function(PostBuilder) updates) =>
-      (toBuilder()..update(updates)).build();
+  Post rebuild(void Function(PostBuilder) updates) => (toBuilder()..update(updates)).build();
 
   @override
   PostBuilder toBuilder() => new PostBuilder()..replace(this);
@@ -173,11 +149,7 @@ class _$Post extends Post {
 
   @override
   int get hashCode {
-    return $jf($jc(
-        $jc(
-            $jc($jc($jc(0, id.hashCode), userId.hashCode),
-                displayName.hashCode),
-            message.hashCode),
+    return $jf($jc($jc($jc($jc($jc(0, id.hashCode), userId.hashCode), displayName.hashCode), message.hashCode),
         createdAt.hashCode));
   }
 
@@ -249,10 +221,8 @@ class PostBuilder implements Builder<Post, PostBuilder> {
             id: BuiltValueNullFieldError.checkNotNull(id, 'Post', 'id'),
             userId: userId,
             displayName: displayName,
-            message: BuiltValueNullFieldError.checkNotNull(
-                message, 'Post', 'message'),
-            createdAt: BuiltValueNullFieldError.checkNotNull(
-                createdAt, 'Post', 'createdAt'));
+            message: BuiltValueNullFieldError.checkNotNull(message, 'Post', 'message'),
+            createdAt: BuiltValueNullFieldError.checkNotNull(createdAt, 'Post', 'createdAt'));
     replace(_$result);
     return _$result;
   }
@@ -270,8 +240,7 @@ class _$PostsState extends PostsState {
   }
 
   @override
-  PostsState rebuild(void Function(PostsStateBuilder) updates) =>
-      (toBuilder()..update(updates)).build();
+  PostsState rebuild(void Function(PostsStateBuilder) updates) => (toBuilder()..update(updates)).build();
 
   @override
   PostsStateBuilder toBuilder() => new PostsStateBuilder()..replace(this);
@@ -289,8 +258,7 @@ class _$PostsState extends PostsState {
 
   @override
   String toString() {
-    return (newBuiltValueToStringHelper('PostsState')..add('posts', posts))
-        .toString();
+    return (newBuiltValueToStringHelper('PostsState')..add('posts', posts)).toString();
   }
 }
 
@@ -334,8 +302,7 @@ class PostsStateBuilder implements Builder<PostsState, PostsStateBuilder> {
         _$failedField = 'posts';
         posts.build();
       } catch (e) {
-        throw new BuiltValueNestedFieldError(
-            'PostsState', _$failedField, e.toString());
+        throw new BuiltValueNestedFieldError('PostsState', _$failedField, e.toString());
       }
       rethrow;
     }

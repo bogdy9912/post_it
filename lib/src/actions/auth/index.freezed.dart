@@ -49,8 +49,7 @@ const $Register = _$RegisterTearOff();
 mixin _$Register {
   @optionalTypeArgs
   TResult when<TResult extends Object?>(
-    TResult Function(String username, String displayName, String password,
-            void Function(AppAction) response)
+    TResult Function(String username, String displayName, String password, void Function(AppAction) response)
         $default, {
     required TResult Function(AppUser user) successful,
     required TResult Function(Object error) error,
@@ -58,8 +57,7 @@ mixin _$Register {
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>(
-    TResult Function(String username, String displayName, String password,
-            void Function(AppAction) response)?
+    TResult Function(String username, String displayName, String password, void Function(AppAction) response)?
         $default, {
     TResult Function(AppUser user)? successful,
     TResult Function(Object error)? error,
@@ -85,8 +83,7 @@ mixin _$Register {
 
 /// @nodoc
 abstract class $RegisterCopyWith<$Res> {
-  factory $RegisterCopyWith(Register value, $Res Function(Register) then) =
-      _$RegisterCopyWithImpl<$Res>;
+  factory $RegisterCopyWith(Register value, $Res Function(Register) then) = _$RegisterCopyWithImpl<$Res>;
 }
 
 /// @nodoc
@@ -100,18 +97,12 @@ class _$RegisterCopyWithImpl<$Res> implements $RegisterCopyWith<$Res> {
 
 /// @nodoc
 abstract class $Register$CopyWith<$Res> {
-  factory $Register$CopyWith(Register$ value, $Res Function(Register$) then) =
-      _$Register$CopyWithImpl<$Res>;
-  $Res call(
-      {String username,
-      String displayName,
-      String password,
-      void Function(AppAction) response});
+  factory $Register$CopyWith(Register$ value, $Res Function(Register$) then) = _$Register$CopyWithImpl<$Res>;
+  $Res call({String username, String displayName, String password, void Function(AppAction) response});
 }
 
 /// @nodoc
-class _$Register$CopyWithImpl<$Res> extends _$RegisterCopyWithImpl<$Res>
-    implements $Register$CopyWith<$Res> {
+class _$Register$CopyWithImpl<$Res> extends _$RegisterCopyWithImpl<$Res> implements $Register$CopyWith<$Res> {
   _$Register$CopyWithImpl(Register$ _value, $Res Function(Register$) _then)
       : super(_value, (v) => _then(v as Register$));
 
@@ -149,10 +140,7 @@ class _$Register$CopyWithImpl<$Res> extends _$RegisterCopyWithImpl<$Res>
 /// @nodoc
 class _$Register$ implements Register$ {
   const _$Register$(
-      {required this.username,
-      required this.displayName,
-      required this.password,
-      required this.response});
+      {required this.username, required this.displayName, required this.password, required this.response});
 
   @override
   final String username;
@@ -172,18 +160,11 @@ class _$Register$ implements Register$ {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other is Register$ &&
-            (identical(other.username, username) ||
-                const DeepCollectionEquality()
-                    .equals(other.username, username)) &&
+            (identical(other.username, username) || const DeepCollectionEquality().equals(other.username, username)) &&
             (identical(other.displayName, displayName) ||
-                const DeepCollectionEquality()
-                    .equals(other.displayName, displayName)) &&
-            (identical(other.password, password) ||
-                const DeepCollectionEquality()
-                    .equals(other.password, password)) &&
-            (identical(other.response, response) ||
-                const DeepCollectionEquality()
-                    .equals(other.response, response)));
+                const DeepCollectionEquality().equals(other.displayName, displayName)) &&
+            (identical(other.password, password) || const DeepCollectionEquality().equals(other.password, password)) &&
+            (identical(other.response, response) || const DeepCollectionEquality().equals(other.response, response)));
   }
 
   @override
@@ -196,14 +177,12 @@ class _$Register$ implements Register$ {
 
   @JsonKey(ignore: true)
   @override
-  $Register$CopyWith<Register$> get copyWith =>
-      _$Register$CopyWithImpl<Register$>(this, _$identity);
+  $Register$CopyWith<Register$> get copyWith => _$Register$CopyWithImpl<Register$>(this, _$identity);
 
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>(
-    TResult Function(String username, String displayName, String password,
-            void Function(AppAction) response)
+    TResult Function(String username, String displayName, String password, void Function(AppAction) response)
         $default, {
     required TResult Function(AppUser user) successful,
     required TResult Function(Object error) error,
@@ -214,8 +193,7 @@ class _$Register$ implements Register$ {
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>(
-    TResult Function(String username, String displayName, String password,
-            void Function(AppAction) response)?
+    TResult Function(String username, String displayName, String password, void Function(AppAction) response)?
         $default, {
     TResult Function(AppUser user)? successful,
     TResult Function(Object error)? error,
@@ -264,24 +242,20 @@ abstract class Register$ implements Register {
   String get password => throw _privateConstructorUsedError;
   void Function(AppAction) get response => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
-  $Register$CopyWith<Register$> get copyWith =>
-      throw _privateConstructorUsedError;
+  $Register$CopyWith<Register$> get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 abstract class $RegisterSuccessfulCopyWith<$Res> {
-  factory $RegisterSuccessfulCopyWith(
-          RegisterSuccessful value, $Res Function(RegisterSuccessful) then) =
+  factory $RegisterSuccessfulCopyWith(RegisterSuccessful value, $Res Function(RegisterSuccessful) then) =
       _$RegisterSuccessfulCopyWithImpl<$Res>;
   $Res call({AppUser user});
 }
 
 /// @nodoc
-class _$RegisterSuccessfulCopyWithImpl<$Res>
-    extends _$RegisterCopyWithImpl<$Res>
+class _$RegisterSuccessfulCopyWithImpl<$Res> extends _$RegisterCopyWithImpl<$Res>
     implements $RegisterSuccessfulCopyWith<$Res> {
-  _$RegisterSuccessfulCopyWithImpl(
-      RegisterSuccessful _value, $Res Function(RegisterSuccessful) _then)
+  _$RegisterSuccessfulCopyWithImpl(RegisterSuccessful _value, $Res Function(RegisterSuccessful) _then)
       : super(_value, (v) => _then(v as RegisterSuccessful));
 
   @override
@@ -316,13 +290,11 @@ class _$RegisterSuccessful implements RegisterSuccessful {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other is RegisterSuccessful &&
-            (identical(other.user, user) ||
-                const DeepCollectionEquality().equals(other.user, user)));
+            (identical(other.user, user) || const DeepCollectionEquality().equals(other.user, user)));
   }
 
   @override
-  int get hashCode =>
-      runtimeType.hashCode ^ const DeepCollectionEquality().hash(user);
+  int get hashCode => runtimeType.hashCode ^ const DeepCollectionEquality().hash(user);
 
   @JsonKey(ignore: true)
   @override
@@ -332,8 +304,7 @@ class _$RegisterSuccessful implements RegisterSuccessful {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>(
-    TResult Function(String username, String displayName, String password,
-            void Function(AppAction) response)
+    TResult Function(String username, String displayName, String password, void Function(AppAction) response)
         $default, {
     required TResult Function(AppUser user) successful,
     required TResult Function(Object error) error,
@@ -344,8 +315,7 @@ class _$RegisterSuccessful implements RegisterSuccessful {
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>(
-    TResult Function(String username, String displayName, String password,
-            void Function(AppAction) response)?
+    TResult Function(String username, String displayName, String password, void Function(AppAction) response)?
         $default, {
     TResult Function(AppUser user)? successful,
     TResult Function(Object error)? error,
@@ -387,23 +357,19 @@ abstract class RegisterSuccessful implements Register {
 
   AppUser get user => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
-  $RegisterSuccessfulCopyWith<RegisterSuccessful> get copyWith =>
-      throw _privateConstructorUsedError;
+  $RegisterSuccessfulCopyWith<RegisterSuccessful> get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 abstract class $RegisterErrorCopyWith<$Res> {
-  factory $RegisterErrorCopyWith(
-          RegisterError value, $Res Function(RegisterError) then) =
+  factory $RegisterErrorCopyWith(RegisterError value, $Res Function(RegisterError) then) =
       _$RegisterErrorCopyWithImpl<$Res>;
   $Res call({Object error});
 }
 
 /// @nodoc
-class _$RegisterErrorCopyWithImpl<$Res> extends _$RegisterCopyWithImpl<$Res>
-    implements $RegisterErrorCopyWith<$Res> {
-  _$RegisterErrorCopyWithImpl(
-      RegisterError _value, $Res Function(RegisterError) _then)
+class _$RegisterErrorCopyWithImpl<$Res> extends _$RegisterCopyWithImpl<$Res> implements $RegisterErrorCopyWith<$Res> {
+  _$RegisterErrorCopyWithImpl(RegisterError _value, $Res Function(RegisterError) _then)
       : super(_value, (v) => _then(v as RegisterError));
 
   @override
@@ -440,24 +406,20 @@ class _$RegisterError implements RegisterError {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other is RegisterError &&
-            (identical(other.error, error) ||
-                const DeepCollectionEquality().equals(other.error, error)));
+            (identical(other.error, error) || const DeepCollectionEquality().equals(other.error, error)));
   }
 
   @override
-  int get hashCode =>
-      runtimeType.hashCode ^ const DeepCollectionEquality().hash(error);
+  int get hashCode => runtimeType.hashCode ^ const DeepCollectionEquality().hash(error);
 
   @JsonKey(ignore: true)
   @override
-  $RegisterErrorCopyWith<RegisterError> get copyWith =>
-      _$RegisterErrorCopyWithImpl<RegisterError>(this, _$identity);
+  $RegisterErrorCopyWith<RegisterError> get copyWith => _$RegisterErrorCopyWithImpl<RegisterError>(this, _$identity);
 
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>(
-    TResult Function(String username, String displayName, String password,
-            void Function(AppAction) response)
+    TResult Function(String username, String displayName, String password, void Function(AppAction) response)
         $default, {
     required TResult Function(AppUser user) successful,
     required TResult Function(Object error) error,
@@ -468,8 +430,7 @@ class _$RegisterError implements RegisterError {
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>(
-    TResult Function(String username, String displayName, String password,
-            void Function(AppAction) response)?
+    TResult Function(String username, String displayName, String password, void Function(AppAction) response)?
         $default, {
     TResult Function(AppUser user)? successful,
     TResult Function(Object error)? error,
@@ -511,18 +472,14 @@ abstract class RegisterError implements Register, ErrorAction {
 
   Object get error => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
-  $RegisterErrorCopyWith<RegisterError> get copyWith =>
-      throw _privateConstructorUsedError;
+  $RegisterErrorCopyWith<RegisterError> get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 class _$LoginTearOff {
   const _$LoginTearOff();
 
-  Login$ call(
-      {required String username,
-      required String password,
-      required void Function(AppAction) response}) {
+  Login$ call({required String username, required String password, required void Function(AppAction) response}) {
     return Login$(
       username: username,
       password: password,
@@ -550,18 +507,14 @@ const $Login = _$LoginTearOff();
 mixin _$Login {
   @optionalTypeArgs
   TResult when<TResult extends Object?>(
-    TResult Function(
-            String username, String password, void Function(AppAction) response)
-        $default, {
+    TResult Function(String username, String password, void Function(AppAction) response) $default, {
     required TResult Function(AppUser user) successful,
     required TResult Function(Object error) error,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>(
-    TResult Function(String username, String password,
-            void Function(AppAction) response)?
-        $default, {
+    TResult Function(String username, String password, void Function(AppAction) response)? $default, {
     TResult Function(AppUser user)? successful,
     TResult Function(Object error)? error,
     required TResult orElse(),
@@ -586,8 +539,7 @@ mixin _$Login {
 
 /// @nodoc
 abstract class $LoginCopyWith<$Res> {
-  factory $LoginCopyWith(Login value, $Res Function(Login) then) =
-      _$LoginCopyWithImpl<$Res>;
+  factory $LoginCopyWith(Login value, $Res Function(Login) then) = _$LoginCopyWithImpl<$Res>;
 }
 
 /// @nodoc
@@ -601,17 +553,13 @@ class _$LoginCopyWithImpl<$Res> implements $LoginCopyWith<$Res> {
 
 /// @nodoc
 abstract class $Login$CopyWith<$Res> {
-  factory $Login$CopyWith(Login$ value, $Res Function(Login$) then) =
-      _$Login$CopyWithImpl<$Res>;
-  $Res call(
-      {String username, String password, void Function(AppAction) response});
+  factory $Login$CopyWith(Login$ value, $Res Function(Login$) then) = _$Login$CopyWithImpl<$Res>;
+  $Res call({String username, String password, void Function(AppAction) response});
 }
 
 /// @nodoc
-class _$Login$CopyWithImpl<$Res> extends _$LoginCopyWithImpl<$Res>
-    implements $Login$CopyWith<$Res> {
-  _$Login$CopyWithImpl(Login$ _value, $Res Function(Login$) _then)
-      : super(_value, (v) => _then(v as Login$));
+class _$Login$CopyWithImpl<$Res> extends _$LoginCopyWithImpl<$Res> implements $Login$CopyWith<$Res> {
+  _$Login$CopyWithImpl(Login$ _value, $Res Function(Login$) _then) : super(_value, (v) => _then(v as Login$));
 
   @override
   Login$ get _value => super._value as Login$;
@@ -641,8 +589,7 @@ class _$Login$CopyWithImpl<$Res> extends _$LoginCopyWithImpl<$Res>
 
 /// @nodoc
 class _$Login$ implements Login$ {
-  const _$Login$(
-      {required this.username, required this.password, required this.response});
+  const _$Login$({required this.username, required this.password, required this.response});
 
   @override
   final String username;
@@ -660,15 +607,9 @@ class _$Login$ implements Login$ {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other is Login$ &&
-            (identical(other.username, username) ||
-                const DeepCollectionEquality()
-                    .equals(other.username, username)) &&
-            (identical(other.password, password) ||
-                const DeepCollectionEquality()
-                    .equals(other.password, password)) &&
-            (identical(other.response, response) ||
-                const DeepCollectionEquality()
-                    .equals(other.response, response)));
+            (identical(other.username, username) || const DeepCollectionEquality().equals(other.username, username)) &&
+            (identical(other.password, password) || const DeepCollectionEquality().equals(other.password, password)) &&
+            (identical(other.response, response) || const DeepCollectionEquality().equals(other.response, response)));
   }
 
   @override
@@ -680,15 +621,12 @@ class _$Login$ implements Login$ {
 
   @JsonKey(ignore: true)
   @override
-  $Login$CopyWith<Login$> get copyWith =>
-      _$Login$CopyWithImpl<Login$>(this, _$identity);
+  $Login$CopyWith<Login$> get copyWith => _$Login$CopyWithImpl<Login$>(this, _$identity);
 
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>(
-    TResult Function(
-            String username, String password, void Function(AppAction) response)
-        $default, {
+    TResult Function(String username, String password, void Function(AppAction) response) $default, {
     required TResult Function(AppUser user) successful,
     required TResult Function(Object error) error,
   }) {
@@ -698,9 +636,7 @@ class _$Login$ implements Login$ {
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>(
-    TResult Function(String username, String password,
-            void Function(AppAction) response)?
-        $default, {
+    TResult Function(String username, String password, void Function(AppAction) response)? $default, {
     TResult Function(AppUser user)? successful,
     TResult Function(Object error)? error,
     required TResult orElse(),
@@ -738,9 +674,7 @@ class _$Login$ implements Login$ {
 
 abstract class Login$ implements Login {
   const factory Login$(
-      {required String username,
-      required String password,
-      required void Function(AppAction) response}) = _$Login$;
+      {required String username, required String password, required void Function(AppAction) response}) = _$Login$;
 
   String get username => throw _privateConstructorUsedError;
   String get password => throw _privateConstructorUsedError;
@@ -751,17 +685,14 @@ abstract class Login$ implements Login {
 
 /// @nodoc
 abstract class $LoginSuccessfulCopyWith<$Res> {
-  factory $LoginSuccessfulCopyWith(
-          LoginSuccessful value, $Res Function(LoginSuccessful) then) =
+  factory $LoginSuccessfulCopyWith(LoginSuccessful value, $Res Function(LoginSuccessful) then) =
       _$LoginSuccessfulCopyWithImpl<$Res>;
   $Res call({AppUser user});
 }
 
 /// @nodoc
-class _$LoginSuccessfulCopyWithImpl<$Res> extends _$LoginCopyWithImpl<$Res>
-    implements $LoginSuccessfulCopyWith<$Res> {
-  _$LoginSuccessfulCopyWithImpl(
-      LoginSuccessful _value, $Res Function(LoginSuccessful) _then)
+class _$LoginSuccessfulCopyWithImpl<$Res> extends _$LoginCopyWithImpl<$Res> implements $LoginSuccessfulCopyWith<$Res> {
+  _$LoginSuccessfulCopyWithImpl(LoginSuccessful _value, $Res Function(LoginSuccessful) _then)
       : super(_value, (v) => _then(v as LoginSuccessful));
 
   @override
@@ -796,13 +727,11 @@ class _$LoginSuccessful implements LoginSuccessful {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other is LoginSuccessful &&
-            (identical(other.user, user) ||
-                const DeepCollectionEquality().equals(other.user, user)));
+            (identical(other.user, user) || const DeepCollectionEquality().equals(other.user, user)));
   }
 
   @override
-  int get hashCode =>
-      runtimeType.hashCode ^ const DeepCollectionEquality().hash(user);
+  int get hashCode => runtimeType.hashCode ^ const DeepCollectionEquality().hash(user);
 
   @JsonKey(ignore: true)
   @override
@@ -812,9 +741,7 @@ class _$LoginSuccessful implements LoginSuccessful {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>(
-    TResult Function(
-            String username, String password, void Function(AppAction) response)
-        $default, {
+    TResult Function(String username, String password, void Function(AppAction) response) $default, {
     required TResult Function(AppUser user) successful,
     required TResult Function(Object error) error,
   }) {
@@ -824,9 +751,7 @@ class _$LoginSuccessful implements LoginSuccessful {
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>(
-    TResult Function(String username, String password,
-            void Function(AppAction) response)?
-        $default, {
+    TResult Function(String username, String password, void Function(AppAction) response)? $default, {
     TResult Function(AppUser user)? successful,
     TResult Function(Object error)? error,
     required TResult orElse(),
@@ -867,21 +792,17 @@ abstract class LoginSuccessful implements Login {
 
   AppUser get user => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
-  $LoginSuccessfulCopyWith<LoginSuccessful> get copyWith =>
-      throw _privateConstructorUsedError;
+  $LoginSuccessfulCopyWith<LoginSuccessful> get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 abstract class $LoginErrorCopyWith<$Res> {
-  factory $LoginErrorCopyWith(
-          LoginError value, $Res Function(LoginError) then) =
-      _$LoginErrorCopyWithImpl<$Res>;
+  factory $LoginErrorCopyWith(LoginError value, $Res Function(LoginError) then) = _$LoginErrorCopyWithImpl<$Res>;
   $Res call({Object error});
 }
 
 /// @nodoc
-class _$LoginErrorCopyWithImpl<$Res> extends _$LoginCopyWithImpl<$Res>
-    implements $LoginErrorCopyWith<$Res> {
+class _$LoginErrorCopyWithImpl<$Res> extends _$LoginCopyWithImpl<$Res> implements $LoginErrorCopyWith<$Res> {
   _$LoginErrorCopyWithImpl(LoginError _value, $Res Function(LoginError) _then)
       : super(_value, (v) => _then(v as LoginError));
 
@@ -919,25 +840,20 @@ class _$LoginError implements LoginError {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other is LoginError &&
-            (identical(other.error, error) ||
-                const DeepCollectionEquality().equals(other.error, error)));
+            (identical(other.error, error) || const DeepCollectionEquality().equals(other.error, error)));
   }
 
   @override
-  int get hashCode =>
-      runtimeType.hashCode ^ const DeepCollectionEquality().hash(error);
+  int get hashCode => runtimeType.hashCode ^ const DeepCollectionEquality().hash(error);
 
   @JsonKey(ignore: true)
   @override
-  $LoginErrorCopyWith<LoginError> get copyWith =>
-      _$LoginErrorCopyWithImpl<LoginError>(this, _$identity);
+  $LoginErrorCopyWith<LoginError> get copyWith => _$LoginErrorCopyWithImpl<LoginError>(this, _$identity);
 
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>(
-    TResult Function(
-            String username, String password, void Function(AppAction) response)
-        $default, {
+    TResult Function(String username, String password, void Function(AppAction) response) $default, {
     required TResult Function(AppUser user) successful,
     required TResult Function(Object error) error,
   }) {
@@ -947,9 +863,7 @@ class _$LoginError implements LoginError {
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>(
-    TResult Function(String username, String password,
-            void Function(AppAction) response)?
-        $default, {
+    TResult Function(String username, String password, void Function(AppAction) response)? $default, {
     TResult Function(AppUser user)? successful,
     TResult Function(Object error)? error,
     required TResult orElse(),
@@ -990,8 +904,7 @@ abstract class LoginError implements Login, ErrorAction {
 
   Object get error => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
-  $LoginErrorCopyWith<LoginError> get copyWith =>
-      throw _privateConstructorUsedError;
+  $LoginErrorCopyWith<LoginError> get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
@@ -1011,8 +924,7 @@ mixin _$SignOut {}
 
 /// @nodoc
 abstract class $SignOutCopyWith<$Res> {
-  factory $SignOutCopyWith(SignOut value, $Res Function(SignOut) then) =
-      _$SignOutCopyWithImpl<$Res>;
+  factory $SignOutCopyWith(SignOut value, $Res Function(SignOut) then) = _$SignOutCopyWithImpl<$Res>;
 }
 
 /// @nodoc
@@ -1026,15 +938,12 @@ class _$SignOutCopyWithImpl<$Res> implements $SignOutCopyWith<$Res> {
 
 /// @nodoc
 abstract class $SignOut$CopyWith<$Res> {
-  factory $SignOut$CopyWith(SignOut$ value, $Res Function(SignOut$) then) =
-      _$SignOut$CopyWithImpl<$Res>;
+  factory $SignOut$CopyWith(SignOut$ value, $Res Function(SignOut$) then) = _$SignOut$CopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class _$SignOut$CopyWithImpl<$Res> extends _$SignOutCopyWithImpl<$Res>
-    implements $SignOut$CopyWith<$Res> {
-  _$SignOut$CopyWithImpl(SignOut$ _value, $Res Function(SignOut$) _then)
-      : super(_value, (v) => _then(v as SignOut$));
+class _$SignOut$CopyWithImpl<$Res> extends _$SignOutCopyWithImpl<$Res> implements $SignOut$CopyWith<$Res> {
+  _$SignOut$CopyWithImpl(SignOut$ _value, $Res Function(SignOut$) _then) : super(_value, (v) => _then(v as SignOut$));
 
   @override
   SignOut$ get _value => super._value as SignOut$;
