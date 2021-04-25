@@ -1,6 +1,5 @@
 import 'dart:convert';
 
-
 import 'package:http/http.dart' as http;
 
 import 'package:post_it/src/models/auth/index.dart';
@@ -45,7 +44,7 @@ class AuthApi {
     final http.Response response = await http.post(url,
         body: <String, dynamic>{'username': username, 'password': password});
 
-    if (json.decode(response.body)['error'] != null){
+    if (json.decode(response.body)['error'] != null) {
       throw json.decode(response.body)['error']['message'];
     }
 

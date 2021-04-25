@@ -17,11 +17,14 @@ class AuthEpics {
     ]);
   }
 
-  Stream<AppAction> _register(Stream<Register$> actions, EpicStore<AppState> store) {
+  Stream<AppAction> _register(
+      Stream<Register$> actions, EpicStore<AppState> store) {
     return actions //
         .flatMap((Register$ action) => Stream<Register$>.value(action)
-            .asyncMap((Register$ action) =>
-                api.register(username: action.username, password: action.password, displayName: action.displayName))
+            .asyncMap((Register$ action) => api.register(
+                username: action.username,
+                password: action.password,
+                displayName: action.displayName))
             .map((AppUser user) => Register.successful(user))
             .onErrorReturnWith((dynamic error) => Register.error(error))
             .doOnData(action.response));
@@ -30,7 +33,8 @@ class AuthEpics {
   Stream<AppAction> _login(Stream<Login$> actions, EpicStore<AppState> store) {
     return actions //
         .flatMap((Login$ action) => Stream<Login$>.value(action)
-                .asyncMap((Login$ action) => api.login(username: action.username, password: action.password))
+                .asyncMap((Login$ action) => api.login(
+                    username: action.username, password: action.password))
                 .map((AppUser user) => Login.successful(user))
                 .onErrorReturnWith((dynamic error) {
               print(error);

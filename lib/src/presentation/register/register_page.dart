@@ -13,7 +13,7 @@ class RegisterPage extends StatefulWidget {
   _RegisterPageState createState() => _RegisterPageState();
 }
 
-class _RegisterPageState extends State<RegisterPage> with DialogMixin{
+class _RegisterPageState extends State<RegisterPage> with DialogMixin {
   final TextEditingController _displayName = TextEditingController();
   final TextEditingController _username = TextEditingController();
   final TextEditingController _password = TextEditingController();

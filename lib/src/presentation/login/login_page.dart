@@ -14,14 +14,14 @@ class LoginPage extends StatefulWidget {
   _LoginPageState createState() => _LoginPageState();
 }
 
-class _LoginPageState extends State<LoginPage> with DialogMixin{
+class _LoginPageState extends State<LoginPage> with DialogMixin {
   final TextEditingController _username = TextEditingController();
   final TextEditingController _password = TextEditingController();
 
   void _response(AppAction action) {
     if (action is LoginError) {
       showError(context, 'Login error', action.error);
-    } else if (action is LoginSuccessful){
+    } else if (action is LoginSuccessful) {
       StoreProvider.of<AppState>(context).dispatch(const GetFeed());
 //      print('LALALLA');
     }
@@ -100,14 +100,16 @@ class _LoginPageState extends State<LoginPage> with DialogMixin{
                   ),
                   const SizedBox(height: 6),
                   ConstrainedBox(
-                    constraints: const BoxConstraints.tightFor(width: double.infinity, height: 48),
+                    constraints: const BoxConstraints.tightFor(
+                        width: double.infinity, height: 48),
                     child: ElevatedButton(
                       onPressed: () {
                         final bool valid = Form.of(context)!.validate();
                         if (valid) {
-
-                          StoreProvider.of<AppState>(context)
-                              .dispatch(Login(username: _username.text, password: _password.text, response: _response));
+                          StoreProvider.of<AppState>(context).dispatch(Login(
+                              username: _username.text,
+                              password: _password.text,
+                              response: _response));
                         }
                       },
                       child: const Text('LOGIN'),
@@ -123,7 +125,9 @@ class _LoginPageState extends State<LoginPage> with DialogMixin{
                         },
                         child: const Text(
                           'New here? Create an account',
-                          style: TextStyle(decoration: TextDecoration.underline, color: Colors.white),
+                          style: TextStyle(
+                              decoration: TextDecoration.underline,
+                              color: Colors.white),
                         ),
                       ),
                     ],

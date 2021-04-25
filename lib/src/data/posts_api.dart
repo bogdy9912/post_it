@@ -24,12 +24,10 @@ class PostsApi {
 
   Future<void> createPost({required String message, String? token}) async {
     final Uri url = Uri.parse(_baseUrl);
-    await http.post(url,
-        headers: <String, String>{
-          'Authorization': token == null ? '' : 'Bearer $token'
-        },
-        body: <String, dynamic>{
-          'message': message
-        });
+    await http.post(url, headers: <String, String>{
+      'Authorization': token == null ? '' : 'Bearer $token'
+    }, body: <String, dynamic>{
+      'message': message
+    });
   }
 }
