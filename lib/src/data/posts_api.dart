@@ -24,7 +24,7 @@ class PostsApi {
 
   Future<void> createPost({required String message, String? token}) async {
     final Uri url = Uri.parse(_baseUrl);
-    final http.Response response = await http.post(url,
+    await http.post(url,
         headers: <String, String>{
           'Authorization': token == null ? '' : 'Bearer $token'
         },
