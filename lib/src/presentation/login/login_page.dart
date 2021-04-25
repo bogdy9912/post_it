@@ -20,15 +20,10 @@ class _LoginPageState extends State<LoginPage> with DialogMixin{
 
   void _response(AppAction action) {
     if (action is LoginError) {
-//      showDialog<AlertDialog>(
-//          context: context,
-//          builder: (BuildContext context) => AlertDialog(
-//                title: Text('Eroare'),
-//            content: Text(action.error.toString()),
-//              ));
       showError(context, 'Login error', action.error);
     } else if (action is LoginSuccessful){
       StoreProvider.of<AppState>(context).dispatch(const GetFeed());
+//      print('LALALLA');
     }
   }
 
@@ -110,6 +105,7 @@ class _LoginPageState extends State<LoginPage> with DialogMixin{
                       onPressed: () {
                         final bool valid = Form.of(context)!.validate();
                         if (valid) {
+
                           StoreProvider.of<AppState>(context)
                               .dispatch(Login(username: _username.text, password: _password.text, response: _response));
                         }

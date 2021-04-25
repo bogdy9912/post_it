@@ -23,11 +23,7 @@ class AuthApi {
     });
 
     if (json.decode(response.body)['error'] != null) {
-//      print(json.decode(response.body).toString());
-//      print(json.decode(response.body)['error']);
-
-//      throw 'Erroare';
-      throw json.decode(response.body)['error'];
+      throw json.decode(response.body)['error']['message'];
     }
 
     final AppUser user =
@@ -48,6 +44,10 @@ class AuthApi {
 
     final http.Response response = await http.post(url,
         body: <String, dynamic>{'username': username, 'password': password});
+
+    if (json.decode(response.body)['error'] != null){
+      throw json.decode(response.body)['error']['message'];
+    }
 
     final AppUser user =
         AppUser.fromJson(json.decode(response.body)['data']['user']);
